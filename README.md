@@ -50,7 +50,7 @@ The analysis follows a comprehensive big data processing pipeline:
 ## 📈 Key Findings
 
 ### 🚨 Driver Risk Analysis
-- **Highest Risk Driver**: Driver A97 with risk factor of 31.69
+- **Outlier Detection and Removal**: Driver A97 with risk factor of 31.69
 - **Most Common Violation**: Lane departure (committed by almost all risky drivers)
 - **Critical Insight**: Personalized training needed based on individual violation patterns
 
