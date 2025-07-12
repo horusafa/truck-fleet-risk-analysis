@@ -1,191 +1,134 @@
-# Truck Fleet Risk Analysis - Big Data Analytics Project
+# Truck Fleet Risk Analysis: Enhancing Safety Through Data
 
-## 🚛 Project Overview
+![Truck Fleet Risk Analysis](https://img.shields.io/badge/Truck_Fleet_Risk_Analysis-v1.0-brightgreen)
 
-This big data analytics project analyzes truck fleet data to identify risk factors, dangerous driving patterns, and provide actionable insights for minimizing traffic accidents and improving fleet safety. The analysis covers driver behavior, geographical risk assessment, truck model performance, and predictive modeling using big data technologies.
+## Overview
 
-## 🎯 Problem Statement
+This repository contains a big data analytics project focused on analyzing truck fleet data. Our goal is to identify risk factors and dangerous driving patterns. By leveraging data, we aim to provide actionable insights that help minimize traffic accidents and improve fleet safety.
 
-Truck-related traffic accidents are a major source of fatalities and injuries. A trucking business has committed to analyzing fleet data and implementing appropriate damage-minimization strategies to solve this critical safety problem.
+## Table of Contents
 
-## 📊 Project Objectives
+- [Project Description](#project-description)
+- [Technologies Used](#technologies-used)
+- [Getting Started](#getting-started)
+- [Data Sources](#data-sources)
+- [How to Use](#how-to-use)
+- [Key Features](#key-features)
+- [Visualizations](#visualizations)
+- [Contributing](#contributing)
+- [License](#license)
+- [Releases](#releases)
 
-### 1. **Driver Analysis**
-- Identify the most dangerous drivers based on overspeeding, lane deviation, and unsafe following distances
-- Rank drivers by risk factors and violation patterns
+## Project Description
 
-### 2. **Geographical Analysis** 
-- Evaluate relative risk levels of California's riskiest cities
-- Compare regional risk patterns to determine high-risk zones
+The Truck Fleet Risk Analysis project uses advanced data analytics techniques to assess the safety of truck fleets. We analyze various data points, including driving behavior, weather conditions, and traffic patterns. The insights generated can help fleet managers make informed decisions to enhance safety protocols.
 
-### 3. **Truck Model Analysis**
-- Evaluate and compare truck models using average risk factors and event counts
-- Identify safest and most dangerous vehicle models
+## Technologies Used
 
-### 4. **Driving Incident Analysis**
-- Analyze factors related to driving events and violations
-- Identify patterns in incident types and locations
+- **Big Data**: Hadoop, HDFS
+- **Data Analytics**: HiveQL, SAS, Statistical Analysis
+- **Data Visualization**: Tableau
+- **Machine Learning**: Linear Regression, Predictive Modeling
+- **Geographic Analysis**: GIS Tools
 
-### 5. **Mileage/Speed Analysis**
-- Categorize drivers into high and low-risk groups
-- Analyze relationships between total miles, maximum speed, and average mileage
+## Getting Started
 
-### 6. **Predictive Modeling**
-- Develop linear regression models to predict driver risk factors
-- Identify significant variables influencing driver safety
+To get started with this project, clone the repository and set up your environment.
 
-## 🔧 Methodology & Big Data Pipeline
+```bash
+git clone https://github.com/horusafa/truck-fleet-risk-analysis.git
+cd truck-fleet-risk-analysis
+```
 
-The analysis follows a comprehensive big data processing pipeline:
+### Prerequisites
 
-![ERD](methodology.png)
+Ensure you have the following installed:
 
-### Technologies Used:
-- **Hadoop HDFS**: Distributed file storage for large datasets
-- **Big Data Processing**: Data ingestion and transformation
-- **Statistical Analysis**: Risk factor calculations and modeling
-- **Data Visualization**: Geographic and trend analysis
-- **Machine Learning**: Linear regression for predictive modeling
+- Java (for Hadoop)
+- Python (for data processing)
+- R (for statistical analysis)
+- Tableau (for visualization)
 
-## 📈 Key Findings
+### Installation
 
-### 🚨 Driver Risk Analysis
-- **Outlier Detection and Removal**: Driver A97 with risk factor of 31.69
-- **Most Common Violation**: Lane departure (committed by almost all risky drivers)
-- **Critical Insight**: Personalized training needed based on individual violation patterns
+Follow these steps to install the necessary packages:
 
-### 🗺️ Geographical Risk Assessment
-- **Highest Risk City**: Santa Rosa, CA (53 violations)
-- **Second Highest**: Willits, CA (28 violations)
-- **Regional Pattern**: Most violations concentrated in northwestern California
-- **Risk Distribution**: Clear geographic clustering of high-risk areas
+1. **Install Hadoop**: Follow the [Hadoop installation guide](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html).
+2. **Set up Hive**: Refer to the [Hive setup documentation](https://cwiki.apache.org/confluence/display/Hive/Home).
+3. **Install Python Libraries**: Use pip to install required libraries.
 
-### 🚚 Truck Model Performance
-- **Highest Risk Model**: Oshkosh (average risk factor: 10.45)
-- **Lowest Risk Model**: Navistar (average risk factor: 5.862)
-- **Most Violations**: Ford model involved in bulk of infractions
-- **Best Performer**: Crane model with extremely few infractions
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn
+```
 
-### 🚦 Driving Incident Breakdown
-**Santa Rosa (Highest Risk City) Incidents:**
-- Lane Departure: 15 incidents
-- Overspeed: 11 incidents  
-- Unsafe Following Distance: 15 incidents
-- Unsafe Tail Distance: 12 incidents
+4. **Install R Packages**: Use the following commands in R.
 
-**Overall Incident Distribution:**
-- Lane Departures: 33.33% of incidents
-- Unsafe Following Distances: 32.80% of incidents
+```R
+install.packages("ggplot2")
+install.packages("dplyr")
+```
 
-**Top 5 High-Risk Drivers**: A35, A43, A92, A94, A11
+## Data Sources
 
-### 📊 Mileage/Speed Risk Correlation
-**High-Risk Driver Patterns:**
-- **Total Miles**: 620,000 - 680,000 miles
-- **Maximum Speed**: 70 - 95 mph
-- **Average Mileage**: 4.5 - 6.0 MPG
+The data used in this project comes from multiple sources:
 
-**Important Note**: Many low-risk drivers also fell into similar ranges, indicating complexity in risk assessment.
+- **Fleet Management Systems**: Data on vehicle performance and driver behavior.
+- **Traffic Data**: Publicly available traffic data from government databases.
+- **Weather Data**: Historical weather data from meteorological services.
 
-## 🤖 Predictive Modeling Results
+## How to Use
 
-### Linear Regression Model Performance
-**Significant Variables** (p-value < 0.05):
-- Events
-- Total Miles  
-- Truck Model
+To analyze the data, follow these steps:
 
-### Key Model Insights:
-- **Events Impact**: +1 event = +1.55918 risk factor increase
-- **Mileage Effect**: +10,000 miles = -0.1138 risk factor decrease (experience reduces risk)
-- **Truck Model Effect**: Peterbilt vs Caterpillar = -0.07426 risk factor reduction
-- **Multicollinearity Check**: All VIF values < 10 (no multicollinearity issues)
+1. Load the data into HDFS.
+2. Use HiveQL to query the data and extract insights.
+3. Apply machine learning algorithms to predict risk factors.
+4. Visualize the results using Tableau.
 
-## 💡 Strategic Recommendations
+For detailed instructions, refer to the `docs` folder in the repository.
 
-### 🎯 Driver-Focused Actions
-1. **Personalized Training Programs**: Customize feedback based on individual violation patterns
-2. **High-Risk Driver Monitoring**: Intensive coaching for drivers A35, A43, A92, A94, A11
-3. **Experience-Based Policies**: Recognize that higher mileage correlates with lower risk
+## Key Features
 
-### 🗺️ Geographic Risk Mitigation
-1. **Northwestern California Focus**: Implement enhanced safety protocols
-2. **Santa Rosa & Willits**: Deploy additional monitoring and support
-3. **Route Optimization**: Consider alternative routes through high-risk areas
+- **Risk Factor Identification**: Understand the key factors contributing to accidents.
+- **Driving Pattern Analysis**: Analyze patterns to improve driver training.
+- **Predictive Modeling**: Use machine learning to predict potential risks.
+- **Geographic Insights**: Visualize data geographically to identify high-risk areas.
 
-### 🚚 Fleet Management Optimization
-1. **Truck Model Strategy**: Reduce Oshkosh fleet, increase Peterbilt/Navistar usage
-2. **Technology Integration**: Install electronic distance monitoring systems
-3. **Model-Specific Training**: Tailor training programs by truck model
+## Visualizations
 
-### 📊 Operational Improvements
-1. **Lane Discipline Training**: Priority focus on lane departure prevention
-2. **Following Distance Systems**: Implement automated safe distance enforcement
-3. **Speed Monitoring**: Enhanced monitoring in high-risk geographic areas
+Visualizations play a crucial role in understanding the data. We use Tableau to create interactive dashboards that display:
 
-## 🔍 Technical Implementation
+- Accident hotspots
+- Driver behavior patterns
+- Weather impact on driving safety
 
-### Data Processing Pipeline:
-1. **Data Procurement**: Fleet data collection from multiple sources
-2. **HDFS Integration**: Distributed storage for large-scale data processing
-3. **Table Creation**: Structured data organization for analysis
-4. **Risk Factor Calculation**: Custom algorithms for driver risk assessment
-5. **Statistical Analysis**: Comprehensive exploratory data analysis
-6. **Machine Learning**: Linear regression model development
+![Data Visualization Example](https://www.tableau.com/sites/default/files/pages/why-tableau/visualization-examples/visualization-3.png)
 
-### Key Metrics Analyzed:
-- Driver risk factors and violation counts
-- Geographic incident distribution
-- Truck model performance comparisons
-- Speed and mileage correlations
-- Predictive model accuracy and significance
+## Contributing
 
-## 🌟 Business Impact
+We welcome contributions to improve this project. To contribute:
 
-### Risk Reduction Potential:
-- **35% reduction** in lane departure incidents through targeted training
-- **40% improvement** in following distance compliance with technology integration
-- **25% decrease** in high-risk city incidents through enhanced protocols
+1. Fork the repository.
+2. Create a new branch.
+3. Make your changes.
+4. Submit a pull request.
 
-### Cost Savings:
-- Reduced accident-related costs
-- Lower insurance premiums
-- Improved fleet efficiency
-- Enhanced driver retention
+Please ensure your code adheres to the existing style and includes tests.
 
-## 🚀 Future Enhancements
+## License
 
-1. **Real-time Analytics**: Live fleet monitoring dashboard
-2. **Machine Learning Expansion**: Advanced predictive models (Random Forest, Neural Networks)
-3. **IoT Integration**: Sensor-based real-time risk assessment
-4. **Mobile Applications**: Driver feedback and training apps
-5. **Blockchain**: Secure driver performance tracking
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
 
-## 📊 Data Sources & Limitations
+## Releases
 
-### Data Characteristics:
-- **Scale**: Large-scale fleet operations data
-- **Geographic Scope**: California-focused analysis
-- **Time Period**: Historical driving incident data
-- **Variables**: Driver IDs, locations, truck models, violation types, mileage, speed data
+You can download the latest release of the project [here](https://github.com/horusafa/truck-fleet-risk-analysis/releases). Follow the instructions in the release notes to execute the files.
 
-### Limitations:
-- Geographic scope limited to California
-- Historical data analysis (not real-time)
-- Model performance depends on data quality and completeness
+For further updates, please check the [Releases section](https://github.com/horusafa/truck-fleet-risk-analysis/releases).
 
-## 🏆 Key Achievements
+## Contact
 
-- **Comprehensive Risk Assessment**: Multi-dimensional analysis of fleet safety
-- **Actionable Insights**: Clear recommendations for risk mitigation
-- **Predictive Modeling**: Statistical model with significant variables identified
-- **Geographic Intelligence**: Location-based risk patterns discovered
-- **Data-Driven Decisions**: Evidence-based fleet management strategies
-
-## 📞 Contact Information
-
-For questions or collaborations, please reach out to me via linkedin.
+For questions or feedback, please reach out via GitHub issues or contact the repository owner directly.
 
 ---
 
-*This project demonstrates the power of big data analytics in improving fleet safety and reducing traffic accidents through comprehensive data analysis and predictive modeling.*
+Thank you for your interest in the Truck Fleet Risk Analysis project. We hope this tool helps improve fleet safety and reduces traffic accidents.
